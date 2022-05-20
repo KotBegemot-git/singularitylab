@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Montserrat'), local('montserrat'),
+         url("../fonts/montserrat/Montserrat-Regular.otf"),
+         url("../fonts/montserrat/Montserrat-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Montserrat'), local('montserrat'),
+         url("../fonts/montserrat/Montserrat-Black.otf"),
+         url("../fonts/montserrat/Montserrat-Black.ttf");
+}
+
+@font-face {
+    font-family: 'Docker One';
+    src: local('dockerone'), local('DockerOne'), local('docker-one'), local('Docker-One'), local('Docker One'), local('docker one'),
+         url("../fonts/DOCKER/dockerone.ttf");
+}
+
+@font-face {
+    font-family: 'Docker Two';
+    src: local('dockertwo'), local('DockerTwo'), local('docker-two'), local('Docker-Two'), local('Docker Two'), local('docker two'),
+         url("../fonts/DOCKER/dockertwo.ttf");
+}

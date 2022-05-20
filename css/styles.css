@@ -1,0 +1,497 @@
+:root {
+    --bg-color: #ebebf7;
+    --primary-color: #073145;
+    --secondary-color: #d2ff00;
+    --accent-color: #fda000;
+    --additional-color: #4a8a95;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.hidden-heading {
+    font-size: 1px;
+    opacity: 0;
+}
+
+.section {
+    position: relative;
+    padding: 8% 0;
+}
+
+.section__title {
+    font-family: 'Docker One';
+    font-size: 36px;
+    text-transform: uppercase;
+}
+
+.bg-image {
+    object-fit: cover;
+    position: absolute;
+    z-index: -10;
+}
+
+.content-wrapper,
+.section__content-wrapper {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.side-btn {
+    position: fixed;
+    top: 40%;
+    left: 0;
+    z-index: 0;
+    font-family: 'Docker Two';
+    background-color: #738b9b;
+    color: var(--bg-color);
+    border: none;
+    border-radius: 9px;
+    width: 8rem;
+    aspect-ratio: 3/1;
+    cursor: pointer;
+}
+
+@media(min-width: 768px) {
+    .side-btn {
+        width: 10rem;
+    }
+}
+
+@media(min-width: 1200px) {
+    body {
+        font-size: 24px;
+    }
+
+    .section__title {
+        font-size: 48px;
+    }
+
+    .bg-image {
+        object-fit: unset;
+    }
+
+    .side-btn {
+        width: 12rem;
+    }
+}
+
+@media(min-width: 1400px) {
+    .section {
+        position: relative;
+        padding: 10% 0;
+    }
+}
+/*HEADER START*/
+header {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.logo {
+    max-height: 80px;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 50vw;
+    padding: 2rem 3rem;
+    z-index: 10;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar__link {
+    font: 400 20px "Montserrat";
+    text-transform: uppercase;
+    color: var(--bg-color);
+    padding: 2rem 3rem;
+}
+
+.burger-btn {
+    cursor: pointer;
+    height: 2rem;
+    width: 2rem;
+    overflow: visible;
+    position: relative;
+    z-index: 100;
+}
+
+.burger-btn .burger-btn__burger,
+.burger-btn .burger-btn__burger:before,
+.burger-btn .burger-btn__burger:after {
+    background: var(--primary-color);
+    display: block;
+    height: 2px;
+    opacity: 1;
+    position: absolute;
+    transition: 0.3s ease-in-out;
+}
+
+.burger-btn.close .burger-btn__burger,
+.burger-btn.close .burger-btn__burger:before,
+.burger-btn.close .burger-btn__burger:after {
+    background: var(--bg-color);
+}
+
+.burger-btn .burger-btn__burger:before,
+.burger-btn .burger-btn__burger:after {
+    content: "";
+}
+
+.burger-btn .burger-btn__burger:before {
+    left: 0px;
+    top: -10px;
+    width: 27px;
+}
+
+.burger-btn .burger-btn__burger {
+    right: 0px;
+    top: 13px;
+    width: 27px;
+}
+
+.burger-btn .burger-btn__burger:after {
+    left: 0px;
+    top: 10px;
+    width: 27px;
+}
+
+.burger-btn.close {
+    position: fixed;
+    top: 3rem;
+    right: 7.5%;
+}
+
+.burger-btn.close .burger-btn__burger:before {
+    top: 0px;
+    transform: rotate(90deg);
+    width: 27px;
+}
+
+.burger-btn.close .burger-btn__burger {
+    transform: rotate(-45deg);
+    top: 13px;
+    width: 27px;
+}
+
+.burger-btn.close .burger-btn__burger:after {
+    top: 0px;
+    left: 0;
+    transform: rotate(90deg);
+    opacity: 0;
+    width: 0;
+}
+  
+.navbar.overlay {
+    visibility: visible;
+    opacity: 1;
+    background: var(--primary-color);
+    padding: 1rem 5rem 0 1rem;
+}
+
+@media (min-width: 992px) {
+    .burger-btn {
+        display: none;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: transparent;
+        height: auto;
+        width: auto;
+        visibility: visible;
+        opacity: 1;
+        position: static;
+        height: auto;
+        width: auto;
+        padding: 0;
+    }
+
+    .navbar__link {
+        font: 400 20px "Montserrat";
+        text-transform: uppercase;
+        padding: .5rem 2rem;
+        color: var(--primary-color);
+        padding: .5rem 2rem;
+    }   
+
+    .logo {
+        max-height: 120px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .logo {
+        max-height: 150px;
+    }
+    .navbar__link {
+        font-size: 26px;
+    }
+}
+
+/*HEADER END*/
+
+/*ABOUT US SECTION START*/
+.aboutus-section__text-with-heading {
+    width: 55%;
+}
+
+.aboutus-section__bg-image {
+    top: 20rem;
+    right: 0;   
+    width: 80%;
+    height: auto;
+}
+
+
+@media (min-width: 576px) {
+    .aboutus-section__bg-image {
+        top: 20%;
+    }
+}
+
+@media (min-width: 768px) {
+    .aboutus-section__bg-image {
+        top: 12%;
+        width: 85%;
+    }
+
+    .aboutus-section__text-with-heading {
+        width: 42%;
+    }
+}
+/*ABOUT US SECTION END*/
+
+/*SERVICES SECTION START*/
+.services-section__text-with-heading {
+    width: 50%;
+}
+
+.solution-section h2 {
+    text-align: center;
+}
+
+.contacts__bg-image {
+    inset: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.services-list {
+    background-color: var(--primary-color);
+    font-size: 0.75rem;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 7rem;
+    z-index: 10;
+}
+
+.services-list__item {
+    font: 400 18px 'Montserrat';
+}
+
+.services-list__item_bold {
+    font-weight: 900;
+}
+
+.services-list__item:hover {
+    color: var(--bg-color);
+    cursor: pointer;
+}
+
+.services__bg-image {
+    position: relative;
+    width: 35%; 
+    height: auto; 
+    margin-right: auto;
+    margin-left: auto;
+    align-self: center;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.service-card_img {
+    height: 100px;
+    width: auto;
+    margin: auto;
+    margin-bottom: 4rem;
+}
+
+.service-card_title {
+    font-family: 'Docker One';
+    text-align: center;
+}
+
+.services-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: 5rem auto auto;
+}
+
+@media (min-width: 768px) {
+    .services-section__text-with-heading {
+        width: 32%;
+    }
+
+    .services-wrapper {
+        margin: 8rem auto auto;
+    }
+
+    .service-card img {
+        height: 200px;
+    }
+
+    .services-list__item {
+        font-size: 28px;
+    }
+}
+
+@media(min-width: 1200px) {
+    .services__bg-image {
+        width: 30%;
+    }
+
+    .service-card img {
+        height: 400px;
+    }
+}
+/*SERVICES SECTION START*/
+
+/*CONTACTS SECTION START*/
+.contacts-section {
+    display: flex;
+}
+
+.contacts-section__content-wrapper {
+    width: 80%;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.contact-form__item {
+    box-sizing: border-box;
+    border: 4px solid black;
+    border-radius: 76px;
+    margin-bottom: 2.8rem;
+    box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.35);
+    width: 100%;
+}
+
+.contact-form__item_input {
+    height: 5.5rem;
+    padding: 1rem 3rem;
+}
+
+.contact-form__item_textarea {
+    padding: 2.5rem 3rem;
+    resize: none;
+}
+
+@media (min-width: 992px) {
+    .contact-form__item {
+        width: 100%;
+    }  
+
+    .contact-form__item_input {
+        height: 6.5rem;
+    }
+    
+    .contacts-section__content-wrapper {
+        width: 40%;
+    }
+}
+
+.contact-form__btn {
+    align-self: flex-end;
+    background-image: url('../images/send.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: transparent;
+    height: 5rem;
+    width: 5.25rem;
+    margin: 0;
+}
+
+@media (min-width: 992px) {
+    .contact-form__btn {
+        position: absolute;
+        bottom: 0;
+        right: -10rem;
+    }
+    .contact-form__btn {
+        height: 6.5rem;
+        width: 6.75rem;
+        margin-bottom: 2.8rem;
+    }
+}
+/*CONTACTS SECTION END*/
+
+footer {
+    display: flex;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90%;
+    margin: 30px auto;
+    text-transform: uppercase;
+}
+
+.footer-content__item {
+    margin-bottom: 1rem;
+    font-size: 14px;
+}
+
+.solution-section {
+    padding-top: 0;
+}
+
+@media (min-width: 992px) {
+    .footer-content {
+        flex-direction: row;
+    }
+
+    .footer-content__item {
+        margin-bottom: 0;
+    }    
+}
+
+@media (min-width: 1200px) {
+    .footer-content__item {
+        font-size: 20px;
+    }
+}
